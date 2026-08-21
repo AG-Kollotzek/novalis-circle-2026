@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mechatronic Phantom for SGRT Tracking QA — AG Kollotzek</title>
+<style>
+  :root{
+    --navy:#1F3864; --teal:#318FA3; --orange:#D2691E; --grey:#595959;
+    --bg:#ffffff; --card:#f6f7f8; --line:#e2e5e8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#14171a; --card:#1d2126; --line:#2c3138; --grey:#a8b0b8;
+           --navy:#8fb0e0; --teal:#5fb9cf; --orange:#e8944f; }
+    body{ color:#e6e9ec; }
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:#1a1d20;
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Calibri,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){ body{ color:#e6e9ec; } }
+  .wrap{ max-width:760px; margin:0 auto; padding:2.5rem 1.25rem 4rem; }
+  header{ border-bottom:3px solid var(--teal); padding-bottom:1.25rem; margin-bottom:2rem; }
+  .kicker{ color:var(--teal); font-weight:700; letter-spacing:.06em;
+           text-transform:uppercase; font-size:.78rem; margin:0 0 .5rem; }
+  h1{ font-size:1.6rem; line-height:1.3; margin:0 0 .75rem; color:var(--navy); }
+  .authors{ margin:0; color:var(--grey); font-size:.95rem; }
+  h2{ font-size:1.1rem; margin:2.25rem 0 .6rem; color:var(--navy); }
+  p{ margin:0 0 1rem; }
+  .lead{ font-size:1.05rem; }
+  .card{ background:var(--card); border:1px solid var(--line);
+         border-radius:8px; padding:1rem 1.15rem; margin:0 0 .85rem; }
+  .card h3{ margin:0 0 .3rem; font-size:1rem; color:var(--navy); }
+  .card p{ margin:0; color:var(--grey); font-size:.94rem; }
+  .soon{ display:inline-block; background:var(--orange); color:#fff;
+         font-size:.7rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+         padding:.15rem .5rem; border-radius:4px; vertical-align:.15em; margin-left:.4rem; }
+  .ref{ font-size:.9rem; color:var(--grey); border-left:3px solid var(--line);
+        padding-left:.9rem; }
+  footer{ margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
+          color:var(--grey); font-size:.9rem; }
+  a{ color:var(--teal); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">Novalis Circle 2026 · Poster</p>
+  <h1>Towards Standardized Benchmarking of SGRT Technologies:<br>
+      Development and Validation of the Mechatronic Phantom Behind
+      Quantitative Tracking-Performance QA</h1>
+  <p class="authors">
+    Buck T.<sup>1</sup>, Bersenkowitsch N.<sup>2</sup>, Bodner L.<sup>2</sup>,
+    Entfellner P.<sup>2</sup>, Ganswindt U.<sup>1</sup>, Kollotzek S.<sup>1</sup><br>
+    <sup>1</sup> Department of Radiation Oncology, Medical University of Innsbruck, Austria<br>
+    <sup>2</sup> Department of Radiation Oncology, Tirol Kliniken, Austria
+  </p>
+</header>
+
+<p class="lead">
+  An in-house mechatronic phantom that drives known, reproducible motion so the tracking
+  performance of a surface-guided radiotherapy system can be measured rather than estimated —
+  and the full path from raw motor logs to a signed annual QA report.
+</p>
+
+<p class="ref">
+  Table 4 of the ESTRO-ACROP guideline lists <strong>D2 — Tracking performance</strong> as a
+  required test at 1&nbsp;mm / 1°, monthly to annually on a C-arm linac. It defines what must be
+  tested, how often and to what tolerance — but not how the number is produced. That gap is the
+  origin of this project.
+</p>
+
+<h2>Material</h2>
+
+<div class="card">
+  <h3>Mechatronic platform <span class="soon">coming soon</span></h3>
+  <p>Firmware, serial protocol, measurement terminal, wiring and CAD.</p>
+</div>
+
+<div class="card">
+  <h3>QA evaluation and report generation <span class="soon">coming soon</span></h3>
+  <p>Time-base alignment, kinematic model, per-DoF metrics and the automated annual report.</p>
+</div>
+
+<div class="card">
+  <h3>Poster (PDF) <span class="soon">coming soon</span></h3>
+  <p>Full-resolution version of the poster shown at the conference.</p>
+</div>
+
+<h2>Reference</h2>
+<p class="ref">
+  Freislederer P, Batista V, Öllers M, et al.
+  <em>ESTRO-ACROP guideline on surface guided radiation therapy.</em>
+  Radiother Oncol. 2022;173:188–196.
+</p>
+
+<footer>
+  Contact: <a href="mailto:tim.jo.buck@gmail.com">tim.jo.buck@gmail.com</a><br>
+  AG Kollotzek · Department of Radiation Oncology, Medical University of Innsbruck
+</footer>
+
+</div>
+</body>
+</html>
