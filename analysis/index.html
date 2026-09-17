@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysis plots · Towards Standardized Benchmarking of SGRT Technologies</title>
+<meta name="description" content="Analysis figures of SURF-ETDS: tracking accuracy of ExacTrac Dynamic Surface against the SURF Test Unit in six degrees of freedom.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#253136" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Analysis plots · Towards Standardized Benchmarking of SGRT Technologies">
+<meta property="og:description" content="Analysis figures of SURF-ETDS: tracking accuracy of ExacTrac Dynamic Surface against the SURF Test Unit in six degrees of freedom.">
+<meta property="og:url" content="https://ag-kollotzek.github.io/novalis-circle-2026/analysis/">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header class="letterhead">
+  <div class="wrap masthead compact">
+    <a class="logos" href="../index.html" aria-label="Home: Towards Standardized Benchmarking of SGRT Technologies">
+    <img class="logo logo-mui" src="../assets/logo_mui_seal.png" width="360" height="360" alt="Medical University of Innsbruck">
+    <span class="logos-rule" aria-hidden="true"></span>
+    <img class="logo logo-roi" src="../assets/logo_roi_ibk.png" width="271" height="271" alt="Radio-Oncology Innsbruck">
+    </a>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../index.html">SGRT benchmarking</a></li>
+        <li><span aria-current="page">Analysis plots</span></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="kicker">Analysis · surf-etds-analysis @ 2e9e1e8</p>
+  <h1>Tracking accuracy of ExacTrac Dynamic Surface</h1>
+
+  <p class="lead">Figures of the evaluation pipeline, rebuilt from surf-etds-data v1.0.0 (campaign 2026-03-10_L4, linac&nbsp;4).
+    Residual: ETD output minus commanded phantom pose after the kinematic transformation, evaluated within the measurement window
+    between the sync pulses. Three runs per motion programme unless noted; pads at room temperature (RT) or 32&nbsp;°C.</p>
+  <p class="note measure">DoF: lateral (X), longitudinal (Y), vertical (Z) in mm; pitch about X, roll about Y, yaw about Z in degrees.</p>
+
+  <section class="section" id="pooled" aria-labelledby="pooled-title">
+    <h2 id="pooled-title">Isolated-axis campaigns, pooled</h2>
+
+    <figure class="explained figure-block" id="fig-combined">
+      <div>
+        <a class="fig-plate" href="figures/fig_combined_rmse_RT.pdf"><img src="figures/fig_combined_rmse_RT.png" width="1669" height="928" loading="lazy" alt="Bar chart of RMSE per degree of freedom, isolated-axis campaigns pooled, room temperature: longitudinal 0.15 mm, lateral 0.22 mm, vertical 0.09 mm, pitch 0.05 degrees, yaw 0.09 degrees, roll 0.07 degrees."></a>
+      </div>
+      <figcaption>
+        <h3>RMSE per degree of freedom</h3>
+        <p>Sample-weighted over 9 runs of the horizontal, vertical and rotation campaigns (N&nbsp;=&nbsp;6641), room temperature. Grey bar: SD over all runs (axis dependence); whisker: mean within-axis SD (reproducibility).</p>
+        <p class="takeaway">RMSE longitudinal 0.15&nbsp;mm, lateral 0.22&nbsp;mm, vertical 0.09&nbsp;mm; pitch 0.05°, yaw 0.09°, roll 0.07°. Lateral shows the strongest axis dependence.</p>
+        <p class="source">surf-etds-analysis @ 2e9e1e8 · paper_data/process_v2/figures/fig_combined_rmse_RT.pdf · <a href="figures/fig_combined_rmse_RT.pdf">PDF, 28&nbsp;KB</a></p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="campaigns" aria-labelledby="campaigns-title">
+    <h2 id="campaigns-title">Single-axis campaigns</h2>
+
+    <figure class="explained figure-block" id="fig-horizontal">
+      <div>
+        <a class="fig-plate" href="figures/fig_horizontal_rmse_RT.pdf"><img src="figures/fig_horizontal_rmse_RT.png" width="1569" height="868" loading="lazy" alt="Bar chart of RMSE per degree of freedom, horizontal slide, three runs at room temperature: longitudinal 0.13 mm, lateral 0.09 mm, vertical 0.08 mm, pitch 0.04 degrees, yaw 0.04 degrees, roll 0.04 degrees."></a>
+      </div>
+      <figcaption>
+        <h3>Horizontal slide</h3>
+        <p>Five cycles per run, three runs, room temperature; whisker: SD between runs.</p>
+        <p class="takeaway">Largest RMSE along the direction of motion (longitudinal 0.13&nbsp;mm); rotations ≤&nbsp;0.04°.</p>
+        <p class="source">surf-etds-analysis @ 2e9e1e8 · paper_data/process_v2/figures/fig_horizontal_rmse_RT.pdf · <a href="figures/fig_horizontal_rmse_RT.pdf">PDF, 28&nbsp;KB</a></p>
+      </figcaption>
+    </figure>
+    <figure class="explained figure-block" id="fig-vertical">
+      <div>
+        <a class="fig-plate" href="figures/fig_vertical_rmse_RT.pdf"><img src="figures/fig_vertical_rmse_RT.png" width="1569" height="868" loading="lazy" alt="Bar chart of RMSE per degree of freedom, vertical slide, three runs at room temperature: longitudinal 0.14 mm, lateral 0.37 mm, vertical 0.08 mm, pitch 0.05 degrees, yaw 0.05 degrees, roll 0.10 degrees."></a>
+      </div>
+      <figcaption>
+        <h3>Vertical slide</h3>
+        <p>Five cycles per run, three runs, room temperature; whisker: SD between runs.</p>
+        <p class="takeaway">Lateral 0.37&nbsp;mm, the largest translational RMSE of all campaigns (cross-axis); vertical 0.08&nbsp;mm.</p>
+        <p class="source">surf-etds-analysis @ 2e9e1e8 · paper_data/process_v2/figures/fig_vertical_rmse_RT.pdf · <a href="figures/fig_vertical_rmse_RT.pdf">PDF, 27&nbsp;KB</a></p>
+      </figcaption>
+    </figure>
+    <figure class="explained figure-block" id="fig-rotation">
+      <div>
+        <a class="fig-plate" href="figures/fig_rotation_rmse_RT.pdf"><img src="figures/fig_rotation_rmse_RT.png" width="1569" height="868" loading="lazy" alt="Bar chart of RMSE per degree of freedom, rotation, three runs at room temperature: longitudinal 0.16 mm, lateral 0.06 mm, vertical 0.09 mm, pitch 0.07 degrees, yaw 0.15 degrees, roll 0.05 degrees."></a>
+      </div>
+      <figcaption>
+        <h3>Rotation</h3>
+        <p>Five cycles per run, three runs, room temperature; whisker: SD between runs.</p>
+        <p class="takeaway">Yaw 0.15° and longitudinal 0.16&nbsp;mm; all other DoF lower.</p>
+        <p class="source">surf-etds-analysis @ 2e9e1e8 · paper_data/process_v2/figures/fig_rotation_rmse_RT.pdf · <a href="figures/fig_rotation_rmse_RT.pdf">PDF, 27&nbsp;KB</a></p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="allaxes" aria-labelledby="allaxes-title">
+    <h2 id="allaxes-title">All-axes sequence</h2>
+
+    <figure class="explained figure-block" id="fig-allaxes">
+      <div>
+        <a class="fig-plate" href="figures/fig_allaxes_rmse_RT.pdf"><img src="figures/fig_allaxes_rmse_RT.png" width="1569" height="868" loading="lazy" alt="Bar chart of RMSE per degree of freedom, all-axes sequence, three runs at room temperature: longitudinal 0.16 mm, lateral 0.23 mm, vertical 0.10 mm, pitch 0.05 degrees, yaw 0.09 degrees, roll 0.06 degrees."></a>
+      </div>
+      <figcaption>
+        <h3>All-axes sequence</h3>
+        <p>Horizontal and vertical ±10&nbsp;mm and rotation ±5°, sequentially within each run; three runs, room temperature.</p>
+        <p class="takeaway">RMSE longitudinal 0.16&nbsp;mm, lateral 0.23&nbsp;mm, vertical 0.10&nbsp;mm; pitch 0.05°, yaw 0.09°, roll 0.06°; consistent with the pooled isolated-axis result.</p>
+        <p class="source">surf-etds-analysis @ 2e9e1e8 · paper_data/process_v2/figures/fig_allaxes_rmse_RT.pdf · <a href="figures/fig_allaxes_rmse_RT.pdf">PDF, 29&nbsp;KB</a></p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="temperature" aria-labelledby="temperature-title">
+    <h2 id="temperature-title">Pad temperature</h2>
+
+    <figure class="explained figure-block" id="fig-temperature">
+      <div>
+        <a class="fig-plate" href="figures/fig_temperature_comparison.pdf"><img src="figures/fig_temperature_comparison.png" width="1768" height="985" loading="lazy" alt="Grouped bar chart of RMSE per degree of freedom for the horizontal, vertical and rotation campaigns with pads at room temperature and at 32 degrees Celsius."></a>
+      </div>
+      <figcaption>
+        <h3>Thermal surface signature: room temperature vs 32&nbsp;°C</h3>
+        <p>RMSE per DoF for the three isolated-axis campaigns, pads at room temperature (teal) and 32&nbsp;°C (orange); whiskers: SD between runs (n&nbsp;=&nbsp;3).</p>
+        <p class="takeaway">|ΔRMSE| ≤&nbsp;0.06&nbsp;mm (longitudinal, rotation campaign) and ≤&nbsp;0.03° (pitch, rotation campaign), without consistent sign; the lateral RMSE of the vertical campaign is unchanged (0.37&nbsp;mm vs 0.37&nbsp;mm).</p>
+        <p class="source">surf-etds-analysis @ 2e9e1e8 · paper_data/process_v2/figures/fig_temperature_comparison.pdf · <a href="figures/fig_temperature_comparison.pdf">PDF, 28&nbsp;KB</a></p>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="series" aria-labelledby="series-title">
+    <h2 id="series-title">Time series</h2>
+
+    <figure class="explained figure-block" id="fig-series">
+      <div>
+        <a class="fig-plate" href="figures/with_zoom/Horizontal_RT_residual3d_zoom.pdf"><img src="figures/Horizontal_RT_residual3d_zoom.png" width="1400" height="1673" loading="lazy" alt="Time series of the horizontal slide at room temperature, mean of three runs: commanded and tracked translations and rotations, and the 3D residual, with two insets."></a>
+      </div>
+      <figcaption>
+        <h3>Horizontal slide, room temperature</h3>
+        <p>Mean of three runs. Top and middle: commanded (dashed) and ETD-reported (solid) translations and rotations, band ±1&nbsp;SD.
+          Bottom: magnitude of the 3D residual, translation (mm) and rotation (°). Grey: measurement window between the sync pulses
+          (−5&nbsp;mm steps). Insets: cross-axis coupling and a 10&nbsp;mm plateau.</p>
+        <p class="takeaway">ETD reads slightly below the 10&nbsp;mm plateau (right inset); the translational residual lies mostly between
+          0.1 and 0.25&nbsp;mm, the rotational residual below 0.1°.</p>
+        <p class="source">surf-etds-analysis @ 2e9e1e8 · paper_data/process_v2/figures/with_zoom/Horizontal_RT_residual3d_zoom.pdf · <a href="figures/with_zoom/Horizontal_RT_residual3d_zoom.pdf">PDF, 154&nbsp;KB</a></p>
+      </figcaption>
+    </figure>
+
+    <h3 class="subsection">All motion programmes</h3>
+    <p class="measure note">Variants per programme: with or without insets; bottom panel either the 3D residual or the
+      registration RMS reported by ETD (surface match and thermal camera).</p>
+
+    <details class="gallery">
+      <summary><span>All-axes sequence</span><span class="note">±10&nbsp;mm H/V, ±5° R, sequential · 4 PDFs</span></summary>
+      <ul class="gallery-grid">
+          <li><figure>
+            <a class="fig-plate" href="figures/with_zoom/All_axes_RT_residual3d_zoom.pdf"><img src="figures/thumbs/All_axes_RT_residual3d_zoom.jpg" width="640" height="765" loading="lazy" alt="Time series, all-axes sequence, room temperature, mean of 3 runs."></a>
+            <figcaption><strong>Room temperature</strong> · mean of 3 runs<br>
+              3D residual: <a href="figures/with_zoom/All_axes_RT_residual3d_zoom.pdf">insets</a> · <a href="figures/no_zoom/All_axes_RT_residual3d_nozoom.pdf">plain</a>
+              · ETD registration RMS: <a href="figures/with_zoom/All_axes_RT_etd_rms_zoom.pdf">insets</a> · <a href="figures/no_zoom/All_axes_RT_etd_rms_nozoom.pdf">plain</a></figcaption>
+          </figure></li>
+      </ul>
+    </details>
+    <details class="gallery">
+      <summary><span>Horizontal slide</span><span class="note">5 cycles per run · 8 PDFs</span></summary>
+      <ul class="gallery-grid">
+          <li><figure>
+            <a class="fig-plate" href="figures/with_zoom/Horizontal_RT_residual3d_zoom.pdf"><img src="figures/thumbs/Horizontal_RT_residual3d_zoom.jpg" width="640" height="765" loading="lazy" alt="Time series, horizontal slide, room temperature, mean of 3 runs."></a>
+            <figcaption><strong>Room temperature</strong> · mean of 3 runs<br>
+              3D residual: <a href="figures/with_zoom/Horizontal_RT_residual3d_zoom.pdf">insets</a> · <a href="figures/no_zoom/Horizontal_RT_residual3d_nozoom.pdf">plain</a>
+              · ETD registration RMS: <a href="figures/with_zoom/Horizontal_RT_etd_rms_zoom.pdf">insets</a> · <a href="figures/no_zoom/Horizontal_RT_etd_rms_nozoom.pdf">plain</a></figcaption>
+          </figure></li>
+          <li><figure>
+            <a class="fig-plate" href="figures/with_zoom/Horizontal_32_residual3d_zoom.pdf"><img src="figures/thumbs/Horizontal_32_residual3d_zoom.jpg" width="640" height="765" loading="lazy" alt="Time series, horizontal slide, 32 °c, mean of 3 runs."></a>
+            <figcaption><strong>32&nbsp;°C</strong> · mean of 3 runs<br>
+              3D residual: <a href="figures/with_zoom/Horizontal_32_residual3d_zoom.pdf">insets</a> · <a href="figures/no_zoom/Horizontal_32_residual3d_nozoom.pdf">plain</a>
+              · ETD registration RMS: <a href="figures/with_zoom/Horizontal_32_etd_rms_zoom.pdf">insets</a> · <a href="figures/no_zoom/Horizontal_32_etd_rms_nozoom.pdf">plain</a></figcaption>
+          </figure></li>
+      </ul>
+    </details>
+    <details class="gallery">
+      <summary><span>Vertical slide</span><span class="note">5 cycles per run · 8 PDFs</span></summary>
+      <ul class="gallery-grid">
+          <li><figure>
+            <a class="fig-plate" href="figures/with_zoom/Vertical_RT_residual3d_zoom.pdf"><img src="figures/thumbs/Vertical_RT_residual3d_zoom.jpg" width="640" height="768" loading="lazy" alt="Time series, vertical slide, room temperature, mean of 3 runs."></a>
+            <figcaption><strong>Room temperature</strong> · mean of 3 runs<br>
+              3D residual: <a href="figures/with_zoom/Vertical_RT_residual3d_zoom.pdf">insets</a> · <a href="figures/no_zoom/Vertical_RT_residual3d_nozoom.pdf">plain</a>
+              · ETD registration RMS: <a href="figures/with_zoom/Vertical_RT_etd_rms_zoom.pdf">insets</a> · <a href="figures/no_zoom/Vertical_RT_etd_rms_nozoom.pdf">plain</a></figcaption>
+          </figure></li>
+          <li><figure>
+            <a class="fig-plate" href="figures/with_zoom/Vertical_32_residual3d_zoom.pdf"><img src="figures/thumbs/Vertical_32_residual3d_zoom.jpg" width="640" height="768" loading="lazy" alt="Time series, vertical slide, 32 °c, mean of 3 runs."></a>
+            <figcaption><strong>32&nbsp;°C</strong> · mean of 3 runs<br>
+              3D residual: <a href="figures/with_zoom/Vertical_32_residual3d_zoom.pdf">insets</a> · <a href="figures/no_zoom/Vertical_32_residual3d_nozoom.pdf">plain</a>
+              · ETD registration RMS: <a href="figures/with_zoom/Vertical_32_etd_rms_zoom.pdf">insets</a> · <a href="figures/no_zoom/Vertical_32_etd_rms_nozoom.pdf">plain</a></figcaption>
+          </figure></li>
+      </ul>
+    </details>
+    <details class="gallery">
+      <summary><span>Rotation</span><span class="note">5 cycles per run · 8 PDFs</span></summary>
+      <ul class="gallery-grid">
+          <li><figure>
+            <a class="fig-plate" href="figures/with_zoom/Rotation_RT_residual3d_zoom.pdf"><img src="figures/thumbs/Rotation_RT_residual3d_zoom.jpg" width="640" height="765" loading="lazy" alt="Time series, rotation, room temperature, mean of 3 runs."></a>
+            <figcaption><strong>Room temperature</strong> · mean of 3 runs<br>
+              3D residual: <a href="figures/with_zoom/Rotation_RT_residual3d_zoom.pdf">insets</a> · <a href="figures/no_zoom/Rotation_RT_residual3d_nozoom.pdf">plain</a>
+              · ETD registration RMS: <a href="figures/with_zoom/Rotation_RT_etd_rms_zoom.pdf">insets</a> · <a href="figures/no_zoom/Rotation_RT_etd_rms_nozoom.pdf">plain</a></figcaption>
+          </figure></li>
+          <li><figure>
+            <a class="fig-plate" href="figures/with_zoom/Rotation_32_residual3d_zoom.pdf"><img src="figures/thumbs/Rotation_32_residual3d_zoom.jpg" width="640" height="765" loading="lazy" alt="Time series, rotation, 32 °c, mean of 3 runs."></a>
+            <figcaption><strong>32&nbsp;°C</strong> · mean of 3 runs<br>
+              3D residual: <a href="figures/with_zoom/Rotation_32_residual3d_zoom.pdf">insets</a> · <a href="figures/no_zoom/Rotation_32_residual3d_nozoom.pdf">plain</a>
+              · ETD registration RMS: <a href="figures/with_zoom/Rotation_32_etd_rms_zoom.pdf">insets</a> · <a href="figures/no_zoom/Rotation_32_etd_rms_nozoom.pdf">plain</a></figcaption>
+          </figure></li>
+      </ul>
+    </details>
+  </section>
+
+  <section class="section" id="reproduce" aria-labelledby="reproduce-title">
+    <h2 id="reproduce-title">Reproduction</h2>
+    <p class="measure">Two independent builds from commit 2e9e1e8 gave byte-identical PDFs (Python&nbsp;≥&nbsp;3.11).</p>
+    <pre class="commands"><code>git clone --recurse-submodules https://github.com/AG-Kollotzek/surf-etds-analysis.git
+cd surf-etds-analysis &amp;&amp; git checkout 2e9e1e8 &amp;&amp; git submodule update
+python -m pip install -r requirements.txt
+SOURCE_DATE_EPOCH=$(git log -1 --format=%ct) python paper_pipeline.py</code></pre>
+  </section>
+
+</main>
+
+<footer class="band">
+  <div class="wrap band-grid">
+    <div>
+      <p class="band-name">SURF-ETDS</p>
+      <p>Tracking-performance QA for surface-guided radiotherapy with an open motion phantom.</p>
+      <p>Department of Radiation Oncology · Medical University of Innsbruck</p>
+    </div>
+    <div>
+      <h2>Licence</h2>
+      <p>Text, figures, reports and slides: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+      <p>Code of this site: MIT</p>
+      <p><a href="https://github.com/AG-Kollotzek/novalis-circle-2026">Source of this site</a></p>
+    </div>
+    <div>
+      <h2>Privacy</h2>
+      <p>No cookies, no tracking, no requests to other sites.</p>
+      <p><a href="../assets/qr-code.svg">QR code for this site</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

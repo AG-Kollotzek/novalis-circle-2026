@@ -3,104 +3,266 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mechatronic Phantom for SGRT Tracking QA — AG Kollotzek</title>
-<style>
-  :root{
-    --navy:#1F3864; --teal:#318FA3; --orange:#D2691E; --grey:#595959;
-    --bg:#ffffff; --card:#f6f7f8; --line:#e2e5e8;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#14171a; --card:#1d2126; --line:#2c3138; --grey:#a8b0b8;
-           --navy:#8fb0e0; --teal:#5fb9cf; --orange:#e8944f; }
-    body{ color:#e6e9ec; }
-  }
-  *{ box-sizing:border-box; }
-  body{
-    margin:0; background:var(--bg); color:#1a1d20;
-    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Calibri,Arial,sans-serif;
-  }
-  @media (prefers-color-scheme: dark){ body{ color:#e6e9ec; } }
-  .wrap{ max-width:760px; margin:0 auto; padding:2.5rem 1.25rem 4rem; }
-  header{ border-bottom:3px solid var(--teal); padding-bottom:1.25rem; margin-bottom:2rem; }
-  .kicker{ color:var(--teal); font-weight:700; letter-spacing:.06em;
-           text-transform:uppercase; font-size:.78rem; margin:0 0 .5rem; }
-  h1{ font-size:1.6rem; line-height:1.3; margin:0 0 .75rem; color:var(--navy); }
-  .authors{ margin:0; color:var(--grey); font-size:.95rem; }
-  h2{ font-size:1.1rem; margin:2.25rem 0 .6rem; color:var(--navy); }
-  p{ margin:0 0 1rem; }
-  .lead{ font-size:1.05rem; }
-  .card{ background:var(--card); border:1px solid var(--line);
-         border-radius:8px; padding:1rem 1.15rem; margin:0 0 .85rem; }
-  .card h3{ margin:0 0 .3rem; font-size:1rem; color:var(--navy); }
-  .card p{ margin:0; color:var(--grey); font-size:.94rem; }
-  .soon{ display:inline-block; background:var(--orange); color:#fff;
-         font-size:.7rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
-         padding:.15rem .5rem; border-radius:4px; vertical-align:.15em; margin-left:.4rem; }
-  .ref{ font-size:.9rem; color:var(--grey); border-left:3px solid var(--line);
-        padding-left:.9rem; }
-  footer{ margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line);
-          color:var(--grey); font-size:.9rem; }
-  a{ color:var(--teal); }
-</style>
+<title>Towards Standardized Benchmarking of SGRT Technologies</title>
+<meta name="description" content="Poster and talk at Novalis Circle 2026: an open motion phantom and evaluation chain for the tracking accuracy of ExacTrac Dynamic Surface, with analysis figures, yearly QA reports, code and data.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#253136" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Towards Standardized Benchmarking of SGRT Technologies">
+<meta property="og:description" content="Poster and talk at Novalis Circle 2026: an open motion phantom and evaluation chain for the tracking accuracy of ExacTrac Dynamic Surface, with analysis figures, yearly QA reports, code and data.">
+<meta property="og:url" content="https://ag-kollotzek.github.io/novalis-circle-2026/">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div class="wrap">
 
-<header>
-  <p class="kicker">Novalis Circle 2026 · Poster</p>
-  <h1>Towards Standardized Benchmarking of SGRT Technologies:<br>
-      Development and Validation of the Mechatronic Phantom Behind
-      Quantitative Tracking-Performance QA</h1>
-  <p class="authors">
-    Buck T.<sup>1</sup>, Bersenkowitsch N.<sup>2</sup>, Bodner L.<sup>2</sup>,
-    Entfellner P.<sup>2</sup>, Ganswindt U.<sup>1</sup>, Kollotzek S.<sup>1</sup><br>
-    <sup>1</sup> Department of Radiation Oncology, Medical University of Innsbruck, Austria<br>
-    <sup>2</sup> Department of Radiation Oncology, Tirol Kliniken, Austria
-  </p>
+<header class="letterhead">
+  <div class="wrap masthead">
+    <div class="logos">
+    <img class="logo logo-mui" src="assets/logo_mui_seal.png" width="360" height="360" alt="Medical University of Innsbruck">
+    <span class="logos-rule" aria-hidden="true"></span>
+    <img class="logo logo-roi" src="assets/logo_roi_ibk.png" width="271" height="271" alt="Radio-Oncology Innsbruck">
+    </div>
+    <p class="masthead-org">Medical University of Innsbruck<br>Department of Radiation Oncology</p>
+  </div>
 </header>
 
-<p class="lead">
-  An in-house mechatronic phantom that drives known, reproducible motion so the tracking
-  performance of a surface-guided radiotherapy system can be measured rather than estimated —
-  and the full path from raw motor logs to a signed annual QA report.
-</p>
+<main class="wrap">
 
-<p class="ref">
-  Table 4 of the ESTRO-ACROP guideline lists <strong>D2 — Tracking performance</strong> as a
-  required test at 1&nbsp;mm / 1°, monthly to annually on a C-arm linac. It defines what must be
-  tested, how often and to what tolerance — but not how the number is produced. That gap is the
-  origin of this project.
-</p>
+  <p class="kicker">Novalis Circle 2026 · Poster and talk</p>
+  <h1>Towards Standardized Benchmarking of SGRT Technologies</h1>
+  <p class="standfirst">An open motion phantom and evaluation chain for quantifying the tracking accuracy of
+    ExacTrac Dynamic Surface.</p>
 
-<h2>Material</h2>
+  <p class="authors">Buck T.<sup>1</sup>, Bersenkowitsch N.<sup>2</sup>, Bodner L.<sup>2</sup>, Ganswindt U.<sup>1</sup>, Kollotzek S.<sup>1</sup></p>
+  <ol class="affiliations">
+    <li><sup>1</sup> Department of Radiation Oncology, Medical University of Innsbruck, Austria</li>
+    <li><sup>2</sup> Department of Radiation Oncology, Tirol Kliniken, Austria</li>
+  </ol>
 
-<div class="card">
-  <h3>Mechatronic platform <span class="soon">coming soon</span></h3>
-  <p>Firmware, serial protocol, measurement terminal, wiring and CAD.</p>
-</div>
+  <ul class="contributions" aria-label="Contributions at Novalis Circle 2026">
+    <li>
+      <span class="contrib-kind">Poster</span>
+      <a class="contrib-title" href="poster/index.html">Development and Validation of a Mechatronic Phantom for Quantitative Tracking-Performance QA</a>
+      <span class="contrib-status">A0 PDF · 2.4&nbsp;MB</span>
+    </li>
+    <li>
+      <span class="contrib-kind">Talk</span>
+      <a class="contrib-title" href="talk/index.html">From Commissioning to Long-Term Quality Assurance</a>
+      <span class="contrib-status">slides · added after the talk</span>
+    </li>
+  </ul>
 
-<div class="card">
-  <h3>QA evaluation and report generation <span class="soon">coming soon</span></h3>
-  <p>Time-base alignment, kinematic model, per-DoF metrics and the automated annual report.</p>
-</div>
+  <p class="lead">ESTRO-ACROP specifies a tracking-performance tolerance of 1&nbsp;mm and 1° for surface-guided radiotherapy
+    but no measurement method. A motorised three-axis phantom with two heated surface pads, the SURF Test Unit, serves as
+    ground truth for ExacTrac Dynamic Surface (ETD). Phantom and ETD logs are synchronised, transformed to six degrees of
+    freedom and compared per sample; the same chain is used for method validation and for the yearly QA of each linac.</p>
 
-<div class="card">
-  <h3>Poster (PDF) <span class="soon">coming soon</span></h3>
-  <p>Full-resolution version of the poster shown at the conference.</p>
-</div>
+  <nav aria-label="Project material">
+    <ul class="routes">
+      <li><a href="analysis/index.html">
+        <span class="route-label">Analysis plots <span aria-hidden="true">→</span></span>
+        <span class="route-detail">RMSE, temperature, time series</span></a></li>
+      <li><a href="qa/index.html">
+        <span class="route-label">QA reports <span aria-hidden="true">→</span></span>
+        <span class="route-detail">4 linacs · 2026</span></a></li>
+      <li><a href="#code">
+        <span class="route-label">Code &amp; data <span aria-hidden="true">↓</span></span>
+        <span class="route-detail">4 repositories</span></a></li>
+      <li><a href="https://igrt-lab.i-med.ac.at/">
+        <span class="route-label">IGRT Lab <span aria-hidden="true">↗</span></span>
+        <span class="route-detail">igrt-lab.i-med.ac.at</span></a></li>
+    </ul>
+  </nav>
 
-<h2>Reference</h2>
-<p class="ref">
-  Freislederer P, Batista V, Öllers M, et al.
-  <em>ESTRO-ACROP guideline on surface guided radiation therapy.</em>
-  Radiother Oncol. 2022;173:188–196.
-</p>
 
-<footer>
-  Contact: <a href="mailto:tim.jo.buck@gmail.com">tim.jo.buck@gmail.com</a><br>
-  AG Kollotzek · Department of Radiation Oncology, Medical University of Innsbruck
+  <section class="section" id="results" aria-labelledby="results-title">
+    <h2 id="results-title">Results at a glance</h2>
+
+    <figure class="explained figure-block" id="glance-combined">
+      <div>
+        <a class="fig-plate" href="analysis/figures/fig_combined_rmse_RT.pdf"><img src="analysis/figures/fig_combined_rmse_RT.png" width="1669" height="928" loading="lazy" alt="Bar chart of RMSE per degree of freedom, isolated-axis campaigns pooled, room temperature: longitudinal 0.15 mm, lateral 0.22 mm, vertical 0.09 mm, pitch 0.05 degrees, yaw 0.09 degrees, roll 0.07 degrees."></a>
+      </div>
+      <figcaption>
+        <h3>RMSE per degree of freedom, isolated-axis campaigns pooled</h3>
+        <p>Sample-weighted over 9 runs of the horizontal, vertical and rotation campaigns (N&nbsp;=&nbsp;6641), room temperature. Grey bar: SD over all runs (axis dependence); whisker: mean within-axis SD (reproducibility).</p>
+        <p class="takeaway">RMSE longitudinal 0.15&nbsp;mm, lateral 0.22&nbsp;mm, vertical 0.09&nbsp;mm; pitch 0.05°, yaw 0.09°, roll 0.07°. Lateral shows the strongest axis dependence.</p>
+        <p class="source">surf-etds-analysis @ 2e9e1e8 · paper_data/process_v2/figures/fig_combined_rmse_RT.pdf · <a href="analysis/figures/fig_combined_rmse_RT.pdf">PDF, 28&nbsp;KB</a></p>
+      </figcaption>
+    </figure>
+    <p class="more"><a href="analysis/index.html">All analysis figures <span aria-hidden="true">→</span></a></p>
+  </section>
+
+  <section class="section" id="flow" aria-labelledby="flow-title">
+    <h2 id="flow-title">From motion to metric</h2>
+    <figure class="flow">
+      <div class="plate">
+        <svg viewBox="0 0 360 620" role="img" aria-labelledby="flow-svg-title">
+          <title id="flow-svg-title">Data flow: the phantom and the scanner log independently; a sync pulse seen in both logs aligns them; the aligned data pass through the measurement window, the kinematic model and the per-DoF metrics into the validation figures and the yearly QA report.</title>
+          <defs>
+            <marker id="flow-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+              <path class="dia-head" d="M0,0 L8,4 L0,8 z"/>
+            </marker>
+          </defs>
+
+          <text class="dia-lane" x="8" y="14">PHANTOM</text>
+          <text class="dia-lane" x="188" y="14">SCANNER</text>
+
+          <rect class="dia-box" x="8" y="24" width="164" height="48" rx="4"/>
+          <text class="dia-title" x="20" y="44">SURF Test Unit</text>
+          <text class="dia-sub" x="20" y="61">3 axes · 2 heated pads</text>
+
+          <rect class="dia-box" x="188" y="24" width="164" height="48" rx="4"/>
+          <text class="dia-title" x="200" y="44">ExacTrac Dynamic</text>
+          <text class="dia-sub" x="200" y="61">surface tracking</text>
+
+          <line class="dia-edge" x1="90" y1="72" x2="90" y2="104" marker-end="url(#flow-arrow)"/>
+          <text class="dia-label" x="98" y="92">serial</text>
+          <line class="dia-edge" x1="270" y1="72" x2="270" y2="104" marker-end="url(#flow-arrow)"/>
+          <text class="dia-label" x="278" y="92">export</text>
+
+          <rect class="dia-box" x="8" y="106" width="164" height="48" rx="4"/>
+          <text class="dia-title" x="20" y="126">Terminal log</text>
+          <text class="dia-sub" x="20" y="143">CSV · axes + °C</text>
+
+          <rect class="dia-box" x="188" y="106" width="164" height="48" rx="4"/>
+          <text class="dia-title" x="200" y="126">Tracking result</text>
+          <text class="dia-sub" x="200" y="143">JSON · 6 DoF</text>
+
+          <!-- the same physical sync pulse, seen in both logs -->
+          <line class="dia-edge" x1="90" y1="154" x2="90" y2="168"/>
+          <path class="dia-pulse" d="M90,168 V174 H102 V192 H90 V198"/>
+          <line class="dia-edge" x1="90" y1="198" x2="90" y2="212" marker-end="url(#flow-arrow)"/>
+          <line class="dia-edge" x1="270" y1="154" x2="270" y2="168"/>
+          <path class="dia-pulse" d="M270,168 V174 H258 V192 H270 V198"/>
+          <line class="dia-edge" x1="270" y1="198" x2="270" y2="212" marker-end="url(#flow-arrow)"/>
+          <text class="dia-label" x="180" y="182" text-anchor="middle">sync pulse</text>
+          <text class="dia-label" x="180" y="196" text-anchor="middle">at start + end</text>
+
+          <rect class="dia-box key" x="8" y="214" width="344" height="52" rx="4"/>
+          <text class="dia-title" x="20" y="236">Synchronise</text>
+          <text class="dia-sub" x="20" y="253">time offset + clock rate from the pulses</text>
+
+          <line class="dia-edge" x1="180" y1="266" x2="180" y2="296" marker-end="url(#flow-arrow)"/>
+
+          <rect class="dia-box" x="8" y="298" width="344" height="46" rx="4"/>
+          <text class="dia-title" x="20" y="318">Measurement window</text>
+          <text class="dia-sub" x="20" y="334">sync pulses cut away</text>
+
+          <line class="dia-edge" x1="180" y1="344" x2="180" y2="370" marker-end="url(#flow-arrow)"/>
+
+          <rect class="dia-box" x="8" y="372" width="344" height="58" rx="4"/>
+          <text class="dia-title" x="20" y="392">Kinematic model</text>
+          <text class="dia-sub" x="20" y="408">motor axes → 6 clinical DoF</text>
+          <text class="dia-sub" x="20" y="422">calibrated by kV X-ray sphere detection</text>
+
+          <line class="dia-edge" x1="180" y1="430" x2="180" y2="456" marker-end="url(#flow-arrow)"/>
+
+          <rect class="dia-box" x="8" y="458" width="344" height="46" rx="4"/>
+          <text class="dia-title" x="20" y="478">Metrics per DoF</text>
+          <text class="dia-sub" x="20" y="494">MAE · RMSE · max. absolute error</text>
+
+          <polyline class="dia-edge" points="180,504 180,516 90,516 90,536" marker-end="url(#flow-arrow)"/>
+          <polyline class="dia-edge" points="180,516 270,516 270,536" marker-end="url(#flow-arrow)"/>
+
+          <rect class="dia-box" x="8" y="538" width="164" height="74" rx="4"/>
+          <text class="dia-title" x="20" y="558">Validation figures</text>
+          <text class="dia-sub" x="20" y="575">RMSE per DoF</text>
+          <text class="dia-sub" x="20" y="590">room temp. vs 32 °C</text>
+
+          <rect class="dia-box" x="188" y="538" width="164" height="74" rx="4"/>
+          <text class="dia-title" x="200" y="558">Yearly QA report</text>
+          <text class="dia-sub" x="200" y="575">per linac</text>
+          <rect class="dia-pass" x="200" y="584" width="42" height="17" rx="3"/>
+          <text class="dia-chip pass" x="221" y="596" text-anchor="middle">PASS</text>
+          <rect class="dia-watch" x="247" y="584" width="46" height="17" rx="3"/>
+          <text class="dia-chip watch" x="270" y="596" text-anchor="middle">WATCH</text>
+          <rect class="dia-action" x="298" y="584" width="48" height="17" rx="3"/>
+          <text class="dia-chip action" x="322" y="596" text-anchor="middle">ACTION</text>
+        </svg>
+      </div>
+      <figcaption>
+        <p>Phantom and ETD log independently. Sync pulses at the start and end of each run, present in both logs, determine
+          time offset and clock-rate ratio. Within the measurement window the motor positions are transformed to six clinical
+          DoF by the calibrated kinematic model and compared per sample with the ETD output.</p>
+        <dl class="repo-map">
+          <div><dt>surf-etds-phantom</dt><dd>the phantom: firmware, measurement terminal, hardware</dd></div>
+          <div><dt>surf-etds-data</dt><dd>both raw logs of every run</dd></div>
+          <div><dt>surf-etds-analysis</dt><dd>synchronisation to validation figures</dd></div>
+          <div><dt>surf-etds-qa</dt><dd>the same chain to the yearly report per linac</dd></div>
+        </dl>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="code" aria-labelledby="code-title">
+    <h2 id="code-title">Code &amp; data</h2>
+    <ul class="repos">
+      <li>
+        <a class="repo-name" href="https://github.com/AG-Kollotzek/surf-etds-phantom">surf-etds-phantom</a>
+        <p>The SURF Test Unit: firmware, measurement terminal, hardware documentation and ground-truth motion data.</p>
+      </li>
+      <li>
+        <a class="repo-name" href="https://github.com/AG-Kollotzek/surf-etds-data">surf-etds-data</a>
+        <p>Raw logs of the phantom and of ExacTrac Dynamic Surface, recorded at the linear accelerators of Tirol Kliniken.</p>
+      </li>
+      <li>
+        <a class="repo-name" href="https://github.com/AG-Kollotzek/surf-etds-analysis">surf-etds-analysis</a>
+        <p>Evaluation pipeline: synchronisation, calibrated kinematics with uncertainty propagation, metrics, statistics and figures.</p>
+      </li>
+      <li>
+        <a class="repo-name" href="https://github.com/AG-Kollotzek/surf-etds-qa">surf-etds-qa</a>
+        <p>Yearly QA: pass-rate classification, calibration against X-ray sphere detection and one report per linac.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="references" aria-labelledby="ref-title">
+    <h2 id="ref-title">References &amp; links</h2>
+    <ul class="cite">
+      <li>Freislederer P, Batista V, Öllers M, et al. <em>ESTRO-ACROP guideline on surface guided radiation therapy</em>.
+        Radiother Oncol. 2022;173:188–196. <a href="https://doi.org/10.1016/j.radonc.2022.05.026">doi:10.1016/j.radonc.2022.05.026</a></li>
+      <li class="lab-link">
+        <img src="assets/igrt-lab-logo.png" width="156" height="160" alt="">
+        <span><a href="https://igrt-lab.i-med.ac.at/">IGRT Lab</a>, the research group behind SURF-ETDS, Department of Radiation Oncology, Medical University of Innsbruck.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
+    <dl class="contact">
+      <div><dt>T. Buck</dt><dd><a href="mailto:tim-johannes.buck@student.i-med.ac.at">tim-johannes.buck@student.i-med.ac.at</a></dd></div>
+      <div><dt>S. Kollotzek</dt><dd><a href="mailto:siegfried.kollotzek@i-med.ac.at">siegfried.kollotzek@i-med.ac.at</a></dd></div>
+    </dl>
+    <p class="note contact-note">Questions about code, data or a report: open an issue in the repository concerned.</p>
+  </section>
+
+
+</main>
+
+<footer class="band">
+  <div class="wrap band-grid">
+    <div>
+      <p class="band-name">SURF-ETDS</p>
+      <p>Tracking-performance QA for surface-guided radiotherapy with an open motion phantom.</p>
+      <p>Department of Radiation Oncology · Medical University of Innsbruck</p>
+    </div>
+    <div>
+      <h2>Licence</h2>
+      <p>Text, figures, reports and slides: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+      <p>Code of this site: MIT</p>
+      <p><a href="https://github.com/AG-Kollotzek/novalis-circle-2026">Source of this site</a></p>
+    </div>
+    <div>
+      <h2>Privacy</h2>
+      <p>No cookies, no tracking, no requests to other sites.</p>
+      <p><a href="assets/qr-code.svg">QR code for this site</a></p>
+    </div>
+  </div>
 </footer>
 
-</div>
 </body>
 </html>

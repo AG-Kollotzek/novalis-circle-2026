@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QA reports · Towards Standardized Benchmarking of SGRT Technologies</title>
+<meta name="description" content="Yearly tracking-performance QA of ExacTrac Dynamic Surface with the SURF Test Unit: result per linac and all QA plot pages.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#253136" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="QA reports · Towards Standardized Benchmarking of SGRT Technologies">
+<meta property="og:description" content="Yearly tracking-performance QA of ExacTrac Dynamic Surface with the SURF Test Unit: result per linac and all QA plot pages.">
+<meta property="og:url" content="https://ag-kollotzek.github.io/novalis-circle-2026/qa/">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header class="letterhead">
+  <div class="wrap masthead compact">
+    <a class="logos" href="../index.html" aria-label="Home: Towards Standardized Benchmarking of SGRT Technologies">
+    <img class="logo logo-mui" src="../assets/logo_mui_seal.png" width="360" height="360" alt="Medical University of Innsbruck">
+    <span class="logos-rule" aria-hidden="true"></span>
+    <img class="logo logo-roi" src="../assets/logo_roi_ibk.png" width="271" height="271" alt="Radio-Oncology Innsbruck">
+    </a>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../index.html">SGRT benchmarking</a></li>
+        <li><span aria-current="page">QA reports</span></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="kicker">QA reports · ExacTrac Dynamic Surface</p>
+  <h1>Yearly tracking-performance QA</h1>
+
+  <p class="lead">Yearly QA of ETD tracking performance with the SURF Test Unit on each linac, pads at room temperature and
+    at 32&nbsp;°C. Each sample is classified against the tolerances below; reports are generated with
+    <a href="https://github.com/AG-Kollotzek/surf-etds-qa">surf-etds-qa</a>. Personnel appear as role codes only.</p>
+
+  <section class="section" id="tolerance" aria-labelledby="tolerance-title">
+    <h2 id="tolerance-title">Tolerance and criteria</h2>
+    <div class="table-scroll">
+      <table class="tolerance">
+        <caption>Tracking performance per sample, following ESTRO-ACROP (test D2), and the resulting criteria per DoF</caption>
+        <thead>
+          <tr><th scope="col">Metric</th><th scope="col"><span class="state pass">Pass</span></th><th scope="col"><span class="state watch">Watch</span></th><th scope="col"><span class="state action">Action</span></th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Translation</th><td class="num">≤ 1&nbsp;mm</td><td class="num">1–2&nbsp;mm</td><td class="num">&gt; 2&nbsp;mm</td></tr>
+          <tr><th scope="row">Rotation</th><td class="num">≤ 1°</td><td class="num">1–2°</td><td class="num">&gt; 2°</td></tr>
+          <tr><th scope="row">Pass rate</th><td class="num">≥ 99&nbsp;%</td><td class="num">95–99&nbsp;%</td><td class="num">&lt; 95&nbsp;%</td></tr>
+          <tr><th scope="row">Watch rate</th><td class="num">≤ 1&nbsp;%</td><td class="num">1–5&nbsp;%</td><td class="num">–</td></tr>
+          <tr><th scope="row">Action rate</th><td class="num">0&nbsp;%</td><td class="num">0&nbsp;%</td><td class="num">&gt; 0&nbsp;%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="y2026" aria-labelledby="y2026-title">
+    <h2 id="y2026-title">2026</h2>
+    <p class="set-meta">Evaluated 10 Aug 2026 · reports built from surf-etds-qa @ 55065d1 with surf-etds-data v1.0.0</p>
+    <div class="table-scroll">
+      <table>
+        <caption>Overall result per linac</caption>
+        <thead>
+          <tr><th scope="col">Linac</th><th scope="col">Measured</th><th scope="col">Result</th><th scope="col">Pass rate</th><th scope="col">Report</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Linac 0</th>
+            <td class="num"><time datetime="2026-07-29">29 Jul</time></td>
+            <td><span class="state pass">Pass</span></td>
+            <td class="num">100&nbsp;% <span class="note">in all 6 DoF</span></td>
+            <td class="num"><a href="2026/ETDS_L0_QA_Report_2026-08-10_public.pdf">PDF</a> <span class="note">7&nbsp;pages · 398&nbsp;KB</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Linac 1</th>
+            <td class="num"><time datetime="2026-07-15">15 Jul</time></td>
+            <td><span class="state pass">Pass</span></td>
+            <td class="num">100&nbsp;% <span class="note">in all 6 DoF</span></td>
+            <td class="num"><a href="2026/ETDS_L1_QA_Report_2026-08-10_public.pdf">PDF</a> <span class="note">7&nbsp;pages · 408&nbsp;KB</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Linac 3</th>
+            <td class="num"><time datetime="2026-08-06">6 Aug</time></td>
+            <td><span class="state pass">Pass</span></td>
+            <td class="num">100&nbsp;% <span class="note">in all 6 DoF</span></td>
+            <td class="num"><a href="2026/ETDS_L3_QA_Report_2026-08-10_public.pdf">PDF</a> <span class="note">7&nbsp;pages · 399&nbsp;KB</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Linac 4</th>
+            <td class="num"><time datetime="2026-08-06">6 Aug</time></td>
+            <td><span class="state pass">Pass</span></td>
+            <td class="num">100&nbsp;% <span class="note">in all 6 DoF</span></td>
+            <td class="num"><a href="2026/ETDS_L4_QA_Report_2026-08-10_public.pdf">PDF</a> <span class="note">7&nbsp;pages · 400&nbsp;KB</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="subsection">QA plot pages</h2>
+    <p class="measure">Per linac and pad temperature: tracking overview and verification of the kinematic model against
+      kV X-ray sphere detection, as in the appendix of each report.</p>
+
+    <section class="linac" id="plots-l0" aria-labelledby="plots-l0-title">
+      <div class="linac-head">
+        <h3 id="plots-l0-title">Linac 0</h3>
+        <span class="set-meta">measured <time datetime="2026-07-29">29 Jul 2026</time> · <a href="2026/ETDS_L0_QA_Report_2026-08-10_public.pdf">full report (PDF)</a></span>
+      </div>
+      <ul class="pages">
+        <li><figure>
+          <a class="thumb" href="2026/plots/L0_RT_Couch0_2026-08-10_QA.pdf#page=1"><img src="2026/plots/L0_RT_Couch0_2026-08-10_QA-1.png" width="910" height="1286" loading="lazy" alt="Linac 0, pads at room temperature, QA page 1: tracking in six degrees of freedom over time with 3D and thermal RMSE, sync peaks, measurement window and tolerance tube."></a>
+          <figcaption><strong>RT · Tracking overview</strong><br>page 1 of 2 · PDF 180&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L0_RT_Couch0_2026-08-10_QA.pdf#page=2"><img src="2026/plots/L0_RT_Couch0_2026-08-10_QA-2.png" width="910" height="1286" loading="lazy" alt="Linac 0, pads at room temperature, QA page 2: absolute deviations of the kV X-ray sphere detection per axis."></a>
+          <figcaption><strong>RT · Sphere detection</strong><br>page 2 of 2 · PDF 180&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L0_32_Couch0_2026-08-10_QA.pdf#page=1"><img src="2026/plots/L0_32_Couch0_2026-08-10_QA-1.png" width="910" height="1286" loading="lazy" alt="Linac 0, pads at 32 °C, QA page 1: tracking in six degrees of freedom over time with 3D and thermal RMSE, sync peaks, measurement window and tolerance tube."></a>
+          <figcaption><strong>32&nbsp;°C · Tracking overview</strong><br>page 1 of 2 · PDF 179&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L0_32_Couch0_2026-08-10_QA.pdf#page=2"><img src="2026/plots/L0_32_Couch0_2026-08-10_QA-2.png" width="910" height="1286" loading="lazy" alt="Linac 0, pads at 32 °C, QA page 2: absolute deviations of the kV X-ray sphere detection per axis."></a>
+          <figcaption><strong>32&nbsp;°C · Sphere detection</strong><br>page 2 of 2 · PDF 179&nbsp;KB</figcaption>
+        </figure></li>
+      </ul>
+      <p class="source">Source: surf-etds-qa @ 55065d1 · data/process/L0/single_angle/L0_RT_Couch0_2026-08-10_QA.pdf and L0_32_Couch0_2026-08-10_QA.pdf</p>
+    </section>
+    <section class="linac" id="plots-l1" aria-labelledby="plots-l1-title">
+      <div class="linac-head">
+        <h3 id="plots-l1-title">Linac 1</h3>
+        <span class="set-meta">measured <time datetime="2026-07-15">15 Jul 2026</time> · <a href="2026/ETDS_L1_QA_Report_2026-08-10_public.pdf">full report (PDF)</a></span>
+      </div>
+      <ul class="pages">
+        <li><figure>
+          <a class="thumb" href="2026/plots/L1_RT_Couch0_2026-08-10_QA.pdf#page=1"><img src="2026/plots/L1_RT_Couch0_2026-08-10_QA-1.png" width="910" height="1286" loading="lazy" alt="Linac 1, pads at room temperature, QA page 1: tracking in six degrees of freedom over time with 3D and thermal RMSE, sync peaks, measurement window and tolerance tube."></a>
+          <figcaption><strong>RT · Tracking overview</strong><br>page 1 of 2 · PDF 184&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L1_RT_Couch0_2026-08-10_QA.pdf#page=2"><img src="2026/plots/L1_RT_Couch0_2026-08-10_QA-2.png" width="910" height="1286" loading="lazy" alt="Linac 1, pads at room temperature, QA page 2: absolute deviations of the kV X-ray sphere detection per axis."></a>
+          <figcaption><strong>RT · Sphere detection</strong><br>page 2 of 2 · PDF 184&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L1_32_Couch0_2026-08-10_QA.pdf#page=1"><img src="2026/plots/L1_32_Couch0_2026-08-10_QA-1.png" width="910" height="1286" loading="lazy" alt="Linac 1, pads at 32 °C, QA page 1: tracking in six degrees of freedom over time with 3D and thermal RMSE, sync peaks, measurement window and tolerance tube."></a>
+          <figcaption><strong>32&nbsp;°C · Tracking overview</strong><br>page 1 of 2 · PDF 186&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L1_32_Couch0_2026-08-10_QA.pdf#page=2"><img src="2026/plots/L1_32_Couch0_2026-08-10_QA-2.png" width="910" height="1286" loading="lazy" alt="Linac 1, pads at 32 °C, QA page 2: absolute deviations of the kV X-ray sphere detection per axis."></a>
+          <figcaption><strong>32&nbsp;°C · Sphere detection</strong><br>page 2 of 2 · PDF 186&nbsp;KB</figcaption>
+        </figure></li>
+      </ul>
+      <p class="source">Source: surf-etds-qa @ 55065d1 · data/process/L1/single_angle/L1_RT_Couch0_2026-08-10_QA.pdf and L1_32_Couch0_2026-08-10_QA.pdf</p>
+    </section>
+    <section class="linac" id="plots-l3" aria-labelledby="plots-l3-title">
+      <div class="linac-head">
+        <h3 id="plots-l3-title">Linac 3</h3>
+        <span class="set-meta">measured <time datetime="2026-08-06">6 Aug 2026</time> · <a href="2026/ETDS_L3_QA_Report_2026-08-10_public.pdf">full report (PDF)</a></span>
+      </div>
+      <ul class="pages">
+        <li><figure>
+          <a class="thumb" href="2026/plots/L3_RT_Couch0_2026-08-10_QA.pdf#page=1"><img src="2026/plots/L3_RT_Couch0_2026-08-10_QA-1.png" width="910" height="1286" loading="lazy" alt="Linac 3, pads at room temperature, QA page 1: tracking in six degrees of freedom over time with 3D and thermal RMSE, sync peaks, measurement window and tolerance tube."></a>
+          <figcaption><strong>RT · Tracking overview</strong><br>page 1 of 2 · PDF 180&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L3_RT_Couch0_2026-08-10_QA.pdf#page=2"><img src="2026/plots/L3_RT_Couch0_2026-08-10_QA-2.png" width="910" height="1286" loading="lazy" alt="Linac 3, pads at room temperature, QA page 2: absolute deviations of the kV X-ray sphere detection per axis."></a>
+          <figcaption><strong>RT · Sphere detection</strong><br>page 2 of 2 · PDF 180&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L3_32_Couch0_2026-08-10_QA.pdf#page=1"><img src="2026/plots/L3_32_Couch0_2026-08-10_QA-1.png" width="910" height="1286" loading="lazy" alt="Linac 3, pads at 32 °C, QA page 1: tracking in six degrees of freedom over time with 3D and thermal RMSE, sync peaks, measurement window and tolerance tube."></a>
+          <figcaption><strong>32&nbsp;°C · Tracking overview</strong><br>page 1 of 2 · PDF 181&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L3_32_Couch0_2026-08-10_QA.pdf#page=2"><img src="2026/plots/L3_32_Couch0_2026-08-10_QA-2.png" width="910" height="1286" loading="lazy" alt="Linac 3, pads at 32 °C, QA page 2: absolute deviations of the kV X-ray sphere detection per axis."></a>
+          <figcaption><strong>32&nbsp;°C · Sphere detection</strong><br>page 2 of 2 · PDF 181&nbsp;KB</figcaption>
+        </figure></li>
+      </ul>
+      <p class="source">Source: surf-etds-qa @ 55065d1 · data/process/L3/single_angle/L3_RT_Couch0_2026-08-10_QA.pdf and L3_32_Couch0_2026-08-10_QA.pdf</p>
+    </section>
+    <section class="linac" id="plots-l4" aria-labelledby="plots-l4-title">
+      <div class="linac-head">
+        <h3 id="plots-l4-title">Linac 4</h3>
+        <span class="set-meta">measured <time datetime="2026-08-06">6 Aug 2026</time> · <a href="2026/ETDS_L4_QA_Report_2026-08-10_public.pdf">full report (PDF)</a></span>
+      </div>
+      <ul class="pages">
+        <li><figure>
+          <a class="thumb" href="2026/plots/L4_RT_Couch0_2026-08-10_QA.pdf#page=1"><img src="2026/plots/L4_RT_Couch0_2026-08-10_QA-1.png" width="910" height="1286" loading="lazy" alt="Linac 4, pads at room temperature, QA page 1: tracking in six degrees of freedom over time with 3D and thermal RMSE, sync peaks, measurement window and tolerance tube."></a>
+          <figcaption><strong>RT · Tracking overview</strong><br>page 1 of 2 · PDF 179&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L4_RT_Couch0_2026-08-10_QA.pdf#page=2"><img src="2026/plots/L4_RT_Couch0_2026-08-10_QA-2.png" width="910" height="1286" loading="lazy" alt="Linac 4, pads at room temperature, QA page 2: absolute deviations of the kV X-ray sphere detection per axis."></a>
+          <figcaption><strong>RT · Sphere detection</strong><br>page 2 of 2 · PDF 179&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L4_32_Couch0_2026-08-10_QA.pdf#page=1"><img src="2026/plots/L4_32_Couch0_2026-08-10_QA-1.png" width="910" height="1286" loading="lazy" alt="Linac 4, pads at 32 °C, QA page 1: tracking in six degrees of freedom over time with 3D and thermal RMSE, sync peaks, measurement window and tolerance tube."></a>
+          <figcaption><strong>32&nbsp;°C · Tracking overview</strong><br>page 1 of 2 · PDF 182&nbsp;KB</figcaption>
+        </figure></li>
+        <li><figure>
+          <a class="thumb" href="2026/plots/L4_32_Couch0_2026-08-10_QA.pdf#page=2"><img src="2026/plots/L4_32_Couch0_2026-08-10_QA-2.png" width="910" height="1286" loading="lazy" alt="Linac 4, pads at 32 °C, QA page 2: absolute deviations of the kV X-ray sphere detection per axis."></a>
+          <figcaption><strong>32&nbsp;°C · Sphere detection</strong><br>page 2 of 2 · PDF 182&nbsp;KB</figcaption>
+        </figure></li>
+      </ul>
+      <p class="source">Source: surf-etds-qa @ 55065d1 · data/process/L4/single_angle/L4_RT_Couch0_2026-08-10_QA.pdf and L4_32_Couch0_2026-08-10_QA.pdf</p>
+    </section>
+  </section>
+
+</main>
+
+<footer class="band">
+  <div class="wrap band-grid">
+    <div>
+      <p class="band-name">SURF-ETDS</p>
+      <p>Tracking-performance QA for surface-guided radiotherapy with an open motion phantom.</p>
+      <p>Department of Radiation Oncology · Medical University of Innsbruck</p>
+    </div>
+    <div>
+      <h2>Licence</h2>
+      <p>Text, figures, reports and slides: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+      <p>Code of this site: MIT</p>
+      <p><a href="https://github.com/AG-Kollotzek/novalis-circle-2026">Source of this site</a></p>
+    </div>
+    <div>
+      <h2>Privacy</h2>
+      <p>No cookies, no tracking, no requests to other sites.</p>
+      <p><a href="../assets/qr-code.svg">QR code for this site</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
